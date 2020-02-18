@@ -53,7 +53,7 @@ public class WishlistServiceImpl implements WishlistService{
 	
 }
 
-/**************************** This function will return the wishlist to Service Package ****************************/	
+/**************************** This function will return the wishlist to UI Package ****************************/	
 	public HashMap<String, ProductDTO> displayProductInWishlist() {
 		// TODO Auto-generated method stub
 		return WishlistDaoImpl.wlist ;
