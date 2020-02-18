@@ -15,7 +15,7 @@ public class CreateWishList {
 	 static Scanner sc=new Scanner(System.in);
 	public static void main(String arg[]) throws WishListException
 	{
-	 
+	
 	     {
 		ProductRepository.createProductList();
 	     }
@@ -30,6 +30,7 @@ public class CreateWishList {
      chooseManagement();
   
 }
+	/**************** This function will ask you to choose your Management ****************/
 	
 	public static void chooseManagement()
 	{
@@ -52,6 +53,8 @@ public class CreateWishList {
 		}
 	}
 	
+	/******************* This Function  will start the Cancel Management System *******************/
+	
 	public static void cancelManagement()
 	{
 		try {
@@ -62,6 +65,8 @@ public class CreateWishList {
 		}
 		
 	}
+	
+	/******************* This Function will show you the option to handle Cancel Operations *******************/
 	
 	private static void cancelOperation() throws CancelException {
 		// TODO Auto-generated method stub
@@ -94,9 +99,10 @@ public class CreateWishList {
 			 decision=sc.nextBoolean();
 		   }
 		
-		
 	}
-
+   
+ /*********************** This Function will Display you the Order List ***********************/
+	
 	private static void displayOrder() {
 		// TODO Auto-generated method stub
 		System.out.println("YOUR ORDERLIST\n");
@@ -109,6 +115,8 @@ public class CreateWishList {
 		}
 	}
 
+/************************* This Function will Remove the Order **************************/
+	
 	private static void removeOrder() {
 		// TODO Auto-generated method stub
 		boolean result;
@@ -125,7 +133,9 @@ public class CreateWishList {
 		
 		
 	}
-
+  
+/**************************** This Function will remove the particular product from Order list ****************************/
+	
 	private static void removeProductFromOrder() throws CancelException{
 		// TODO Auto-generated method stub
 		boolean decision=true;
@@ -151,6 +161,8 @@ public class CreateWishList {
 		
 	}
 
+	/************************** This function will create a Order List********************/
+	
 	private static void createOrder() throws CancelException{
 		// TODO Auto-generated method stub
 		
@@ -181,10 +193,9 @@ public class CreateWishList {
 			  
 		 }
 		  
-		
-		
-		
-	}
+}
+	
+ /********************** This function will start the WishList Management System*********************/	
 
 	public static void wishListManagement()
 	{
@@ -196,7 +207,7 @@ public class CreateWishList {
 		}
 	}
 	
-	
+/*********************** This function will show the Operation on WishList ***********************/	
 	
 	static public void wishlistOperation() throws WishListException
 	{ 
@@ -226,8 +237,10 @@ public class CreateWishList {
 		 decision=sc.nextBoolean();
 	   }
 	   
-		
 	}
+	
+/************************ This Function will remove the particular Product from Wishlist ************************/
+	
 	static public void removeFromWishlist() throws WishListException
 	{
 		boolean decision=true;
@@ -252,7 +265,7 @@ public class CreateWishList {
 		
 	}
 	
-	
+/*********************** This function will create the Wishlist ***********************/
 	static public void createWishlist()
 	{
 	
@@ -282,8 +295,9 @@ public class CreateWishList {
 			  
 		 }
 		  
-		 
-	}
+}
+	
+/******************************* This function will display the Wishlist *******************************/
 	static public void display()
 	{
 		System.out.println("YOUR WISHLIST\n");
