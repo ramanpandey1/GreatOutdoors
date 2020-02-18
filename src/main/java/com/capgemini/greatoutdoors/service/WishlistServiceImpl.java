@@ -11,6 +11,7 @@ public class WishlistServiceImpl implements WishlistService{
 	//static  HashMap<String, ProductDTO> wlist1=new HashMap<String , ProductDTO>(); 
 	WishlistDaoImpl WishlistDaoImplObj=new WishlistDaoImpl();
 	
+/****************************** This function will add the Product to Wishlist ******************************/
 	
 	public boolean addProductToWishlist(String productId) throws WishListException {
 		// TODO Auto-generated method stub
@@ -34,6 +35,8 @@ public class WishlistServiceImpl implements WishlistService{
 		
 	}
 
+/*************************** This function will remove the specified product from wishlist ***************************/	
+	
 	 public boolean  removeProductFromWishlist(String productId) throws WishListException {
 		// TODO Auto-generated method stub
 		boolean result=false;
@@ -48,19 +51,13 @@ public class WishlistServiceImpl implements WishlistService{
 			throw new WishListException("Product ID not found in Wishlist to REMOVE");
 		}
 	
-	   
-		
-	}
+}
 
-	@Override
+/**************************** This function will return the wishlist to Service Package ****************************/	
 	public HashMap<String, ProductDTO> displayProductInWishlist() {
 		// TODO Auto-generated method stub
 		return WishlistDaoImpl.wlist ;
 	}
 
-	/* public HashMap<String, ProductDTO> displayProductInWishlist() {
-	HashMap<String, ProductDTO> list1=WishlistDaoImplObj.displayProductInWishlist();
-	return list1;
 	
-}*/
 }

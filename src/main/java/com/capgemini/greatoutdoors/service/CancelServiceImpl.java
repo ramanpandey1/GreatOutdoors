@@ -10,6 +10,9 @@ import com.capgemini.greatoutdoors.util.ProductRepository;
 
 public class CancelServiceImpl implements CancelService  {
 	 CancelDaoImpl CancelDaoImplObj=new CancelDaoImpl();
+	 
+/***************** This function will add specified  product to Order *****************/
+	 
 	public boolean addToOrder(String pid) throws CancelException {
 		// TODO Auto-generated method stub
 		boolean result=false;
@@ -30,6 +33,8 @@ public class CancelServiceImpl implements CancelService  {
 		}
 	}
 
+/************************ This function will remove specified Product from Order ************************/
+	
 	public boolean removeProductFromOrder(String pid) throws CancelException {
 		// TODO Auto-generated method stub
 		boolean result=false;
@@ -47,6 +52,8 @@ public class CancelServiceImpl implements CancelService  {
 	
 	}
 
+/*************************** This function will remove the order ************************/
+	
 	public boolean removeOrder() throws CancelException {
 		// TODO Auto-generated method stub
 		boolean result=false;
@@ -61,7 +68,8 @@ public class CancelServiceImpl implements CancelService  {
 		}
 	}
 
-	@Override
+/********************** This function call the displayOrder function and return the list in Dao Package **********************/
+	
 	public  HashMap<String, ProductDTO> displayOrder() {
 		// TODO Auto-generated method stub
 		HashMap<String, ProductDTO> list1=CancelDaoImplObj.displayOrder();
