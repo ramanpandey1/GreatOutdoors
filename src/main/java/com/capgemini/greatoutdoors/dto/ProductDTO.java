@@ -1,4 +1,5 @@
 package com.capgemini.greatoutdoors.dto;
+/**************************This Class Contains all the attributes of Product with getter and setter********************/
 
 public class ProductDTO {
 int productCategory,productQuantity;
