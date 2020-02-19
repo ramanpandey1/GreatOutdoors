@@ -11,11 +11,11 @@ static public  HashMap<String, ProductDTO> productList=new HashMap<String , Prod
 /************* Function To Create Repository for Product *************/
 static public void createProductList()
 {
-	productList.put("P101", new ProductDTO(1,10,"P101","i10","Red","dimension1","spec1","xyz",1000000));
-	productList.put("P102", new ProductDTO(1,5,"P102","verna","black","dimension2","spec2","xyz",600000));
-	productList.put("P103", new ProductDTO(1,10,"P103","duster","white","dimension1","spec3","xyz",700000));
-	productList.put("P104", new ProductDTO(1,5,"P104","swift dezire","black","dimension3","spec1","xyz",500000));
-	productList.put("P105", new ProductDTO(1,10,"P105","creta","white","dimension1","spec2","xyz",800000));
+	productList.put("P101", new ProductDTO(1,10,"P101","Campling LED headlamp","White","N/A","WaterProof","Adventure Hut",990));
+	productList.put("P102", new ProductDTO(1,5,"P102","Straight claw Hammer","Red+Blak","0.48Kg","Camping Hammer","Camping Mania pvt. ltd.",369));
+	productList.put("P103", new ProductDTO(1,10,"P103","Locking caranaviner","silver","N/A","N/A","Zincpro pvt. ltd.",249));
+	productList.put("P104", new ProductDTO(1,5,"P104","NightScope Vinocular","Grey","12cm X 12cm","UltraClear Vision","Korean Space Tools",1500));
+	productList.put("P105", new ProductDTO(1,10,"P105","Tower Climb Kit","white","N/A","Top Quality Kit","Heapro",19050));
 }
 
 /************** Function to get the list Of Product **************/

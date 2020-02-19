@@ -10,5 +10,5 @@ public interface CancelService {
 	public boolean  addToOrder(String pid) throws CancelException;
 	public boolean removeProductFromOrder(String pid) throws  CancelException;
 	public boolean removeOrder() throws CancelException;
-	public HashMap<String, ProductDTO> displayOrder();
+	public HashMap<String, ProductDTO> displayOrder() throws CancelException;
 }

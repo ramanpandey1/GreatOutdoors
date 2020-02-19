@@ -31,10 +31,13 @@ public class CancelServiceImplTest {
 		assertThrows(CancelException.class, ()->obj.removeOrder());
 	}
 	@Test
-	public void displayOrder()
+	public void displayOrder() throws CancelException
 	{
 		HashMap<String, ProductDTO> list1=new HashMap<String, ProductDTO>();
-		 Assert.assertEquals( list1,obj.displayOrder());
+		
+		assertThrows(CancelException.class,()->obj.displayOrder());
+		
+		
 	}
 	
 }

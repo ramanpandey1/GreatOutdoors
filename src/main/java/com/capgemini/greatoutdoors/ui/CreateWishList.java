@@ -101,17 +101,24 @@ public class CreateWishList {
 		
 	}
    
- /*********************** This Function will Display you the Order List ***********************/
+ /*********************** This Function will Display you the Order List  ***********************/
 	
-	private static void displayOrder() {
+	private static void displayOrder() { 
 		// TODO Auto-generated method stub
 		System.out.println("YOUR ORDERLIST\n");
+		try
+		{
 		HashMap<String, ProductDTO>orderlist=cancelobj.displayOrder();
 		
 		for(Entry<String, ProductDTO> me:orderlist.entrySet())
 		{
 			System.out.println("Product ID: "+me.getKey()+" ,Car Name: "+me.getValue().getProductName()+" , Product Category: "+me.getValue().getProductCategory()+" , Colour: "+me.getValue().getColor()+" , Specification: "+me.getValue().getSpecification()+" , Manufacturer: "+me.getValue().getManufacturer()+" , Price: "+me.getValue().getProductPrice());
 		    System.out.println();
+		}
+		}
+		catch(CancelException e)
+		{
+			System.out.println(e.getMessage());
 		}
 	}
 
@@ -301,11 +308,14 @@ public class CreateWishList {
 	static public void display()
 	{
 		System.out.println("YOUR WISHLIST\n");
+		
 		HashMap<String, ProductDTO>wishlist=obj1.displayProductInWishlist();
 		for(Entry<String, ProductDTO> me:wishlist.entrySet())
 		{
 			System.out.println("Product ID: "+me.getKey()+" ,Car Name: "+me.getValue().getProductName()+" , Product Category: "+me.getValue().getProductCategory()+" , Colour: "+me.getValue().getColor()+" , Specification: "+me.getValue().getSpecification()+" , Manufacturer: "+me.getValue().getManufacturer()+" , Price: "+me.getValue().getProductPrice());
 		    System.out.println();
 		}
+		
+		
 	}
 }

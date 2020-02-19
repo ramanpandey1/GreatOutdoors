@@ -20,27 +20,20 @@ public class WishlistServiceImplTest {
 	 public void addProductToWishlist() 
 	 {
 		assertThrows(WishListException.class, ()->obj.addProductToWishlist("P110"));
-	/*Throwable exception= assertThrows(WishListException.class, ()-> 
-	{
-		obj.addProductToWishlist("P110");
-	},"Product ID not Found in Product List to Add in WishList\\n");
-	assertEquals("Product ID not Found in Product List to Add in WishList\n",exception.getMessage());*/
+	
 	  
 	 }
 	 @Test()
 	 public void removeProductFromWishlist()  
 	 {assertThrows(WishListException.class, ()-> obj.removeProductFromWishlist("P104"));
 	  
-		/* Throwable exception= assertThrows(WishListException.class, ()-> 
-			{
-				obj.removeProductFromWishlist("P104");
-			},"Product ID not found in Wishlist to REMOVE");
-			assertEquals("Product ID not found in Wishlist to REMOVE",exception.getMessage());*/
+		
 	}
 	 @Test()
-	 public void displayProductInWishlist()
+	 public void displayProductInWishlist()  throws WishListException
 	 {  HashMap<String, ProductDTO> list1=new HashMap<String, ProductDTO>();
 		 Assert.assertEquals( list1,obj.displayProductInWishlist());
+		// assertThrows(WishListException.class, ()-> obj.displayProductInWishlist());
 	 }
 	 
 }

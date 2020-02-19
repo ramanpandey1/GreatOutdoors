@@ -70,9 +70,14 @@ public class CancelServiceImpl implements CancelService  {
 
 /********************** This function call the displayOrder function and return the list in Dao Package **********************/
 	
-	public  HashMap<String, ProductDTO> displayOrder() {
+	public  HashMap<String, ProductDTO> displayOrder() throws CancelException {
+
 		// TODO Auto-generated method stub
 		HashMap<String, ProductDTO> list1=CancelDaoImplObj.displayOrder();
+		if(list1.isEmpty())
+		{
+			throw new CancelException("Please Create an Order List");
+		}
 		return list1;
 	}
 
