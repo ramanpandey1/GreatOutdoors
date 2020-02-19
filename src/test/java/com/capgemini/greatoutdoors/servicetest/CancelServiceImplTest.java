@@ -15,11 +15,7 @@ public class CancelServiceImplTest {
 	@Test
 	public void addToOrder()
 	{
-		/*Throwable exception= assertThrows(CancelException.class, ()-> 
-		{
-			obj.addToOrder("P110");
-		},"Product ID not Found in Product List to Add in ORDERLIST\n");
-		assertEquals("Product ID not Found in Product List to Add in ORDERLIST\n",exception.getMessage());*/
+		
 		assertThrows(CancelException.class, ()->obj.addToOrder("P104"));
      }
 		
@@ -27,11 +23,6 @@ public class CancelServiceImplTest {
 	public void removeProductFromOrder()
 	{ 
 		
-		/* Throwable exception= assertThrows(WishListException.class, ()-> 
-			{
-				obj.removeProductFromOrder("P110");
-			},"Product ID not found in ORDER to REMOVE\n");
-			assertEquals("Product ID not ORDER in Wishlist to REMOVE\n",exception.getMessage());*/
 		assertThrows(CancelException.class, ()->obj.removeProductFromOrder("P104"));
 	}
 	@Test
