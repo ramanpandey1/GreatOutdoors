@@ -1,15 +1,20 @@
 package com.capgemini.greatoutdoors.service;
 
 import java.util.HashMap;
+import java.util.InputMismatchException;
+import java.util.Map.Entry;
+import java.util.Scanner;
 
 import com.capgemini.greatoutdoors.dao.WishlistDaoImpl;
 import com.capgemini.greatoutdoors.dto.ProductDTO;
 import com.capgemini.greatoutdoors.exceptions.WishListException;
+import com.capgemini.greatoutdoors.ui.CreateWishList;
 import com.capgemini.greatoutdoors.util.ProductRepository;
 
 public class WishlistServiceImpl implements WishlistService{
 	//static  HashMap<String, ProductDTO> wlist1=new HashMap<String , ProductDTO>(); 
 	WishlistDaoImpl WishlistDaoImplObj=new WishlistDaoImpl();
+	static Scanner scan=new Scanner(System.in);
 	
 /****************************** This function will add the Product to Wishlist ******************************/
 	
@@ -59,6 +64,7 @@ public class WishlistServiceImpl implements WishlistService{
 		
 		return WishlistDaoImpl.wlist ;
 	}
-
+	
+	
 	
 }

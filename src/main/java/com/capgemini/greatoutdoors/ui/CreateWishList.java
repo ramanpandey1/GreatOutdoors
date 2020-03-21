@@ -1,5 +1,6 @@
 package com.capgemini.greatoutdoors.ui;
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Map.Entry;
 import java.util.Scanner;
 import com.capgemini.greatoutdoors.dto.ProductDTO;
@@ -10,9 +11,9 @@ import com.capgemini.greatoutdoors.service.WishlistServiceImpl;
 import com.capgemini.greatoutdoors.util.ProductRepository;
 
 public class CreateWishList {
-	 static WishlistServiceImpl obj1=new  WishlistServiceImpl();
-	 static CancelServiceImpl cancelobj=new CancelServiceImpl();
-	 static Scanner sc=new Scanner(System.in);
+	 static public WishlistServiceImpl wListobj=new  WishlistServiceImpl();
+	 static public CancelServiceImpl cancelobj=new CancelServiceImpl();
+	 static Scanner scan=new Scanner(System.in);
 	public static void main(String arg[]) throws WishListException
 	{
 	
@@ -39,7 +40,7 @@ public class CreateWishList {
 		{
 			System.out.println("Press 1 for WishList Management System\n");
 			System.out.println("Press 2 for Cancel Management System\n");
-			int choice=sc.nextInt();
+			int choice=scan.nextInt();
 			switch(choice)
 			{
 			  case 1: wishListManagement();
@@ -70,6 +71,7 @@ public class CreateWishList {
 	
 	private static void cancelOperation() throws CancelException {
 		// TODO Auto-generated method stub
+		String decisionValue="";
 		boolean decision=true;
 		 while(decision)
 		   {
@@ -80,7 +82,7 @@ public class CreateWishList {
 			System.out.println("Press 4 to display Order");
 			int choice;
 			
-			choice=sc.nextInt();
+			choice=scan.nextInt();
 		    
 		   
 			switch(choice)
@@ -95,8 +97,36 @@ public class CreateWishList {
 			        break;
 			default: System.out.println("WRONG CHOICE");
 			}
-			System.out.println("\nWant to do more Operation on ORDER(true/false)");
-			 decision=sc.nextBoolean();
+			System.out.println("Want to Perform more Operation On Order(yes/no)");
+			  decisionValue=scan.next();
+			  if(decisionValue.equalsIgnoreCase("yes") || decisionValue.equalsIgnoreCase("no"))
+			  {
+				  if(decisionValue.equalsIgnoreCase("yes"))
+				  {
+					  decision=true;
+				  }
+				  else
+				  {
+					  decision=false;
+				  }
+			  }
+			  else
+			  {  boolean check=true;
+			     while(check)
+			     {
+				  System.out.println("Please Enter in yes or no");
+				  decisionValue=scan.next();
+				  if(decisionValue.equalsIgnoreCase("yes") || decisionValue.equalsIgnoreCase("no"))
+				  {
+					  if(decisionValue.equalsIgnoreCase("no"))
+					  {
+						  decision=false;
+					  }
+					  check=false;
+				  }
+			     }
+			  }
+			  
 		   }
 		
 	}
@@ -145,6 +175,7 @@ public class CreateWishList {
 	
 	private static void removeProductFromOrder() throws CancelException{
 		// TODO Auto-generated method stub
+		String decisionValue="";
 		boolean decision=true;
 		   while(decision)
 		   {  try {
@@ -161,8 +192,36 @@ public class CreateWishList {
 		   {
 			   System.out.println(e.getMessage());
 		   }
-	       	  System.out.println("\nWant to remove more Product from ORDER(true/false)");
-		      decision=sc.nextBoolean();
+		   System.out.println("Want to Remove more Products from Order(yes/no)");
+			  decisionValue=scan.next();
+			  if(decisionValue.equalsIgnoreCase("yes") || decisionValue.equalsIgnoreCase("no"))
+			  {
+				  if(decisionValue.equalsIgnoreCase("yes"))
+				  {
+					  decision=true;
+				  }
+				  else
+				  {
+					  decision=false;
+				  }
+			  }
+			  else
+			  {  boolean check=true;
+			     while(check)
+			     {
+				  System.out.println("Please Enter in yes or no");
+				  decisionValue=scan.next();
+				  if(decisionValue.equalsIgnoreCase("yes") || decisionValue.equalsIgnoreCase("no"))
+				  {
+					  if(decisionValue.equalsIgnoreCase("no"))
+					  {
+						  decision=false;
+					  }
+					  check=false;
+				  }
+			     }
+			  }
+			  
 		 }
 		
 		
@@ -175,6 +234,7 @@ public class CreateWishList {
 		
 
 		 System.out.println("CREATE ORDER");
+		 String decisionValue="";
 		 boolean decision=true;
 		
 		 while(decision)
@@ -182,8 +242,8 @@ public class CreateWishList {
 			
 			  try {
 				  System.out.println("Enter ProductID to insert in Order List");
-				  sc.nextLine();
-			  String pid= sc.nextLine();
+				  scan.nextLine();
+			  String pid= scan.nextLine();
 			  boolean result=cancelobj.addToOrder(pid);
 			  if(result)
 			  {
@@ -194,9 +254,36 @@ public class CreateWishList {
 			  {
 				System.out.print(e.getMessage());
 			  } 
-			  System.out.println("Want to Enter more Product in ORDER(true/false)");
-			 
-			  decision=sc.nextBoolean();
+			  System.out.println("Want to Enter more Product in Order(yes/no)");
+			  decisionValue=scan.next();
+			  if(decisionValue.equalsIgnoreCase("yes") || decisionValue.equalsIgnoreCase("no"))
+			  {
+				  if(decisionValue.equalsIgnoreCase("yes"))
+				  {
+					  decision=true;
+				  }
+				  else
+				  {
+					  decision=false;
+				  }
+			  }
+			  else
+			  {  boolean check=true;
+			     while(check)
+			     {
+				  System.out.println("Please Enter in yes or no");
+				  decisionValue=scan.next();
+				  if(decisionValue.equalsIgnoreCase("yes") || decisionValue.equalsIgnoreCase("no"))
+				  {
+					  if(decisionValue.equalsIgnoreCase("no"))
+					  {
+						  decision=false;
+					  }
+					  check=false;
+				  }
+			     }
+			  }
+			  
 			  
 		 }
 		  
@@ -217,7 +304,7 @@ public class CreateWishList {
 /*********************** This function will show the Operation on WishList ***********************/	
 	
 	static public void wishlistOperation() throws WishListException
-	{ 
+	{ String decisionValue="";
 		boolean decision=true;
 	   while(decision)
 	   {
@@ -227,7 +314,7 @@ public class CreateWishList {
 		System.out.println("Press 3 to view Wishlist");
 		int choice;
 		
-		choice=sc.nextInt();
+		choice=scan.nextInt();
 	    
 	   
 		switch(choice)
@@ -240,23 +327,53 @@ public class CreateWishList {
 		        break;
 		default: System.out.println("WRONG CHOICE");
 		}
-		System.out.println("\nWant to do more Operation on Wishlist(true/false)");
-		 decision=sc.nextBoolean();
-	   }
+		System.out.println("Want to Perform more Operation On Wishlist(yes/no)");
+		  decisionValue=scan.next();
+		  if(decisionValue.equalsIgnoreCase("yes") || decisionValue.equalsIgnoreCase("no"))
+		  {
+			  if(decisionValue.equalsIgnoreCase("yes"))
+			  {
+				  decision=true;
+			  }
+			  else
+			  {
+				  decision=false;
+			  }
+		  }
+		  else
+		  {  boolean check=true;
+		     while(check)
+		     {
+			  System.out.println("Please Enter in yes or no");
+			  decisionValue=scan.next();
+			  if(decisionValue.equalsIgnoreCase("yes") || decisionValue.equalsIgnoreCase("no"))
+			  {
+				  if(decisionValue.equalsIgnoreCase("no"))
+				  {
+					  decision=false;
+				  }
+				  check=false;
+			  }
+		     }
+		  }
+		  
+		 
+	 }
+ }
 	   
-	}
+	
 	
 /************************ This Function will remove the particular Product from Wishlist ************************/
 	
 	static public void removeFromWishlist() throws WishListException
-	{
+	{ String decisionValue="";
 		boolean decision=true;
 		   while(decision)
 		   {  try {
 		      System.out.println("Enter Pid to remove");
 		      Scanner input=new Scanner (System.in);
 		      String removePid=input.nextLine();
-		   boolean result=   obj1.removeProductFromWishlist(removePid);
+		   boolean result=   wListobj.removeProductFromWishlist(removePid);
 		     if(result)
 		     {
 		    	 System.out.println("REMOVED SUCCESSFULLY");
@@ -266,17 +383,45 @@ public class CreateWishList {
 		   {
 			   System.out.println(e.getMessage());
 		   }
-	       	  System.out.println("\nWant to remove from wishlist(true/false)");
-		      decision=sc.nextBoolean();
+		   System.out.println("Want to remove more from Wishlist(yes/no)");
+			  decisionValue=scan.next();
+			  if(decisionValue.equalsIgnoreCase("yes") || decisionValue.equalsIgnoreCase("no"))
+			  {
+				  if(decisionValue.equalsIgnoreCase("yes"))
+				  {
+					  decision=true;
+				  }
+				  else
+				  {
+					  decision=false;
+				  }
+			  }
+			  else
+			  {  boolean check=true;
+			     while(check)
+			     {
+				  System.out.println("Please Enter in yes or no");
+				  decisionValue=scan.next();
+				  if(decisionValue.equalsIgnoreCase("yes") || decisionValue.equalsIgnoreCase("no"))
+				  {
+					  if(decisionValue.equalsIgnoreCase("no"))
+					  {
+						  decision=false;
+					  }
+					  check=false;
+				  }
+			     }
+			  }
 		 }
 		
 	}
 	
 /*********************** This function will create the Wishlist ***********************/
-	static public void createWishlist()
+	static public void createWishlist() throws WishListException
 	{
 	
 		 System.out.println("CREATE WISHLIST");
+		 String decisionValue="";
 		 boolean decision=true;
 		
 		 while(decision)
@@ -284,9 +429,9 @@ public class CreateWishList {
 			
 			  try {
 				  System.out.println("Enter ProductID to insert in Wishlist");
-				  sc.nextLine();
-			  String pid= sc.nextLine();
-			  boolean result=obj1.addProductToWishlist(pid);
+				  scan.nextLine();
+			  String pid= scan.nextLine();
+			  boolean result=wListobj.addProductToWishlist(pid);
 			  if(result)
 			  {
 				  System.out.println("Added Successfully");
@@ -296,10 +441,37 @@ public class CreateWishList {
 			  {
 				System.out.print(e.getMessage());
 			  } 
-			  System.out.println("Want to Enter more in Wishlist(true/false)");
-			 
-			  decision=sc.nextBoolean();
+			  System.out.println("Want to Enter more in Wishlist(yes/no)");
+			  decisionValue=scan.next();
+			  if(decisionValue.equalsIgnoreCase("yes") || decisionValue.equalsIgnoreCase("no"))
+			  {
+				  if(decisionValue.equalsIgnoreCase("yes"))
+				  {
+					  decision=true;
+				  }
+				  else
+				  {
+					  decision=false;
+				  }
+			  }
+			  else
+			  {  boolean check=true;
+			     while(check)
+			     {
+				  System.out.println("Please Enter in yes or no");
+				  decisionValue=scan.next();
+				  if(decisionValue.equalsIgnoreCase("yes") || decisionValue.equalsIgnoreCase("no"))
+				  {
+					  if(decisionValue.equalsIgnoreCase("no"))
+					  {
+						  decision=false;
+					  }
+					  check=false;
+				  }
+			     }
+			  }
 			  
+			 
 		 }
 		  
 }
@@ -309,7 +481,7 @@ public class CreateWishList {
 	{
 		System.out.println("YOUR WISHLIST\n");
 		
-		HashMap<String, ProductDTO>wishlist=obj1.displayProductInWishlist();
+		HashMap<String, ProductDTO>wishlist=wListobj.displayProductInWishlist();
 		for(Entry<String, ProductDTO> me:wishlist.entrySet())
 		{
 			System.out.println("Product ID: "+me.getKey()+" ,Car Name: "+me.getValue().getProductName()+" , Product Category: "+me.getValue().getProductCategory()+" , Colour: "+me.getValue().getColor()+" , Specification: "+me.getValue().getSpecification()+" , Manufacturer: "+me.getValue().getManufacturer()+" , Price: "+me.getValue().getProductPrice());
